@@ -8,10 +8,8 @@ for example,
 ```
 venv/
 2023/
-    day_1/
-        - main.py
-        - input.txt
-        - test_input.txt
+    - 1.py
+    - 1.txt
 .gitignore
 README.md
 ```

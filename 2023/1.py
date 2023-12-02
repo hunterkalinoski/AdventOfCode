@@ -62,8 +62,5 @@ def part_two(path: str) -> int:
 
 
 if __name__ == "__main__":
-    print("part one test:", part_one("test_input.txt"))
-    print("part two test:", part_two("test_input2.txt"))
-
-    print("part one:", part_one("input.txt"))
-    print("part two:", part_two("input.txt"))
+    print("part one:", part_one("1.txt"))
+    print("part two:", part_two("1.txt"))
