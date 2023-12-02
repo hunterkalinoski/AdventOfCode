@@ -1,13 +1,10 @@
 import os
 
 # read a file and return each line, with newline stripped
-def extract_lines_from_file(path: str) -> list[str]:
+def read_lines(path: str) -> list[str]:
     file_name = os.path.join(os.path.dirname(__file__), path)
-    lines = []
     with open(file_name) as f:
-        lines = [line.rstrip('\n') for line in f]
-        f.close()
-    return lines
+        return [line.rstrip('\n') for line in f]
 
 
 # find the earliest occurrence of an item from items in line, and return that item
@@ -49,7 +46,7 @@ def get_calibration_value(line: str, accept_num_spellings = False) -> int:
 
 
 def part_one(path: str) -> int:
-    lines = extract_lines_from_file(path)
+    lines = read_lines(path)
     total = 0
     for line in lines:
         total += get_calibration_value(line)
@@ -57,7 +54,7 @@ def part_one(path: str) -> int:
 
 
 def part_two(path: str) -> int:
-    lines = extract_lines_from_file(path)
+    lines = read_lines(path)
     total = 0
     for line in lines:
         total += get_calibration_value(line, accept_num_spellings = True)
@@ -65,8 +62,8 @@ def part_two(path: str) -> int:
 
 
 if __name__ == "__main__":
-    # print("part one test:", part_one("test_input.txt"))
-    # print("part two test:", part_two("test_input2.txt"))
+    print("part one test:", part_one("test_input.txt"))
+    print("part two test:", part_two("test_input2.txt"))
 
     print("part one:", part_one("input.txt"))
     print("part two:", part_two("input.txt"))
