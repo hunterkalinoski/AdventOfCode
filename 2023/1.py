@@ -1,3 +1,7 @@
+#       --------Part 1---------   --------Part 2--------
+# Day       Time    Rank  Score       Time   Rank  Score
+#   1   19:47:22  138248      0   20:47:13  99459      0
+
 import os
 
 # read a file and return each line, with newline stripped

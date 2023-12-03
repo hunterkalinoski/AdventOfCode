@@ -1,3 +1,7 @@
+#       --------Part 1---------   --------Part 2--------
+# Day       Time    Rank  Score       Time   Rank  Score
+#   2   14:41:20   78765      0   14:43:30  74193      0
+
 import os
 import re
 
