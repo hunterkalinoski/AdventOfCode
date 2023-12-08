@@ -12,7 +12,7 @@
 import os
 import re
 from collections import Counter, defaultdict
-
+import math
 
 file_name = os.path.join(os.path.dirname(__file__), "8.txt")
 # file_name = os.path.join(os.path.dirname(__file__), "8t.txt")
@@ -85,6 +85,7 @@ with open(file_name, "r") as f:
             count += 1
         times.append(count)
     print(times)
+    print(math.lcm(*times))
 
     # while True:
     #     done = True
