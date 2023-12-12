@@ -1,3 +1,7 @@
+#       --------Part 1---------   --------Part 2--------
+# Day       Time    Rank  Score       Time   Rank  Score
+#  10       >24h   50334      0       >24h  36254      0
+
 import os
 import re
 from collections import Counter, defaultdict
@@ -6,6 +10,7 @@ import heapq
 
 file_name = os.path.join(os.path.dirname(__file__), "10.txt")
 # file_name = os.path.join(os.path.dirname(__file__), "10t.txt")
+# file_name = os.path.join(os.path.dirname(__file__), "10t2.txt")
 
 right = (1, 0)
 left = (-1, 0)
@@ -48,10 +53,23 @@ with open(file_name) as f:
     prev = start
     cur = nextPos(prev, start)
     dist = 1
+    path = [start]  # part 2
     while cur != start:
+        path.append(cur)    # part 2
         tmp = cur
         cur = nextPos(prev, cur)
         prev = tmp
         dist += 1
     
     print(dist / 2)
+
+    # shoelace formula to find area within the path
+    area = 0
+    n = len(path)
+    for i in range(n):
+        x1, y1 = path[i]
+        x2, y2 = path[(i+1)%n]
+        area += x2 * y1 - x1 * y2
+
+    area = round((area/2) - n/2 + 1)
+    print(area)
